@@ -39,10 +39,11 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
   gem 'rspec-rails'
+  gem "minitest"
 end
 
 group :test do
   gem 'selenium-webdriver'
-  gem 'capybara'
+  gem 'capybara','2.2.1'
 end
 
