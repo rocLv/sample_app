@@ -1,5 +1,5 @@
 
-
+source "http://ruby.sdutlinux.org/"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -38,12 +38,19 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails','2.14.2'
   gem "minitest"
+  gem 'guard-rspec','4.2.8'
+  
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork','1.5.1'
+  gem 'childprocess','0.5.3'
+  
 end
 
 group :test do
   gem 'selenium-webdriver'
-  gem 'capybara','2.2.1'
+  gem 'capybara'
+  
 end
 
