@@ -43,4 +43,12 @@ describe "Static Pages" do
    end
  end
  
+ describe "Contact page" do
+   it "should have the tilte 'Contact Us' " do
+     visit '/static_pages/contact'
+     expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact Us")
+   end
+   
+ end
+ 
 end
