@@ -23,7 +23,7 @@ gem 'bootstrap-sass','3.1.1.1'
 gem 'sprockets','2.11.0'
 
 gem 'bcrypt-ruby','3.1.5'
-
+gem 'simple_form','3.0.2'
 
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -53,6 +53,9 @@ group :development, :test do
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork','1.5.1'
   gem 'childprocess','0.5.3'
+  
+  #deal with db
+  gem 'factory_girl_rails','4.4.1'
   
 end
 

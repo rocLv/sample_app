@@ -8,5 +8,9 @@ describe UsersController do
       response.should be_success
     end
   end
+  
+  describe "should show user infomation" do
+    
+  end
 
 end
