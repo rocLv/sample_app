@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "User Pages" do
     
     subject { page }
+    let(:submit) {"Create my account"}
     
     describe "profile page" do
       let (:user) { FactoryGirl.create(:user) }
@@ -38,6 +39,15 @@ describe "User Pages" do
       
       it "should create a user" do
         expect { click_button "Create my account" }.to change(User, :count)
+      end
+      
+      describe "after saving the user" do
+        before { click_button submit }
+        let(:user) { User.find_by(email: 'user@example.com') }
+        
+        it { should have_link('Sign out') }
+        it { should have_title(user.name) }
+        it { should have_selector('div.alert.alert-success', text:'Welcome')}
       end
     end
     

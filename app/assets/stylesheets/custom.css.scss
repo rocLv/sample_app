@@ -173,10 +173,8 @@ input {
 
 .field_with_errors {
 
-	@extent .form-group;
-	@extent .has-error;
-	@extent .form-control
-
+	@extend .form-group;
+	@extend .has-error;
 	
 }
 

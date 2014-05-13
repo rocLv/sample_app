@@ -23,7 +23,7 @@ gem 'bootstrap-sass','3.1.1.1'
 gem 'sprockets','2.11.0'
 
 gem 'bcrypt-ruby','3.1.5'
-gem 'simple_form','3.0.2'
+#gem 'simple_form','3.0.2'
 
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -62,6 +62,8 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'cucumber-rails', '1.4.1', :require=>false
+  gem 'database_cleaner',git:'https://github.com/bmabey/database_cleaner.git'
   
 end
 
