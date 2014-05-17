@@ -8,7 +8,7 @@ describe "User Pages" do
     describe "index" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        sign_in :user
+        sign_in user
         visit users_path
       end
       
@@ -32,7 +32,7 @@ describe "User Pages" do
         it { should_not have_link('delete') }
         
         describe "as an admin user" do
-          let(:admin) { Factorygirl.create(:admin) }
+          let(:admin) { FactoryGirl.create(:admin) }
           before do
             sign_in admin
             visit users_path
@@ -44,12 +44,20 @@ describe "User Pages" do
     
     describe "profile page" do
       let (:user) { FactoryGirl.create(:user) }
+      let!(:m1)   { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+      let!(:m2)   { FactoryGirl.create(:micropost, user: user, content: "Bar") }
       before do
         visit user_path(user)
       end
       
       it { should have_content(user.name) }
       it { should have_title(user.name) }
+      
+      describe "microposts" do
+        it { should have_content(m1.content) }
+        it { should have_content(m2.content) }
+        it { should have_content(user.microposts.count) }
+      end
     end
     
     describe "signup page" do
