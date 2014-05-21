@@ -142,13 +142,44 @@ aside{
 			letter-spacing: -1px;
 			margin-bottom: 3px;
 			margin-top: 0px;
+			float:left;
 		}
+		#follow_form{
+			margin-top: 10px;
+		}
+
+	}
+}
+
+.stats {
+	overflow: auto;
+	a{
+		float: left;
+		padding: 0px 10px;
+		border-left: 1px solid #eaeaea;
+		color: gray;
+		&:hover{
+			text-decoration: none;
+			color: #00ee88;
+		}
+		strong {
+			display: block;
+		}
+	}
+}
+
+.user_avatars{
+	overflow: auto;
+	margin-top: 10px;
+	.gravatar {
+	  margin:1px 1px;
 	}
 }
 
 .gravatar {
 	float: left;
 	margin-right: 10px;
+	@extend .img-circle
 }
 
 /* forms */
