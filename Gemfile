@@ -1,10 +1,10 @@
 
-source "http://ruby.sdutlinux.org/"
+source "https://rubygems.org/"
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 #
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -51,6 +51,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   gem 'rspec-rails','2.14.2'
   gem "minitest"
   gem 'guard-rspec','4.2.8'
@@ -70,5 +72,10 @@ group :test do
   gem 'cucumber-rails', '1.4.1', :require=>false
   gem 'database_cleaner',git:'https://github.com/bmabey/database_cleaner.git'
   
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
